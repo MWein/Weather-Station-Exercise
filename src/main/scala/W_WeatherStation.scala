@@ -34,17 +34,9 @@ class W_WeatherStation(tMap: Array[Array[Float]], nRows: Int, nCols: Int, ULXMap
 
 
   def checkBounds(latitude: Double, longitude: Double): Boolean = {
-    // Initially set the return value for true
-    var withinBounds = true
-
-    // Check longitude
-    if (longitude > LRXMAP || longitude < ULXMAP) withinBounds = false
-
-    // Check latitude
-    if (latitude > ULYMAP || latitude < LRXMAP) withinBounds = false
-
-    // Return the result
-    withinBounds
+    if (longitude > LRXMAP || longitude < ULXMAP) return false
+    if (latitude > ULYMAP || latitude < LRXMAP) return false
+    true
   }
 
 

@@ -15,9 +15,7 @@ object Driver {
     val myWeatherStation = W_WeatherStationFactory.newWeatherStation(Paths.get(DataHeaderPath), Paths.get(DataPath))
 
 
-
-    val testtemp = myWeatherStation.temperature(40.0, -92.0)
-
+    val testtemp = myWeatherStation.temperature(40.0, -92.0).get
 
     System.out.println(testtemp)
   }
