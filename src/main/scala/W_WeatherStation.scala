@@ -5,10 +5,6 @@ import com.cibo.weather.WeatherStation
   */
 
 
-//
-case class LatLongException(message: String = "", cause: Throwable = None.orNull)
-  extends Exception(message, cause)
-
 
 // Custom exception
 case class LatLongException(message: String = "", cause: Throwable = None.orNull)
@@ -37,15 +33,6 @@ class W_WeatherStation(tMap: Array[Array[Float]], nRows: Int, nCols: Int, ULXMap
     ***/
 
 
-
-
-  /**
-    * Verifies that the passed lat-long coordinate is within the bounds of the data
-    *
-    * @param Latitude The latitude
-    * @param longitude The longitude
-    * @return
-    */
   def checkBounds(latitude: Double, longitude: Double): Boolean = {
     // Initially set the return value for true
     var withinBounds = true
@@ -117,17 +104,6 @@ class W_WeatherStation(tMap: Array[Array[Float]], nRows: Int, nCols: Int, ULXMap
   }
 
 
-  /**
-    * Calculates the average temperature in the rectangular region specified.
-    *
-    * If any portion of the area is not within the bounds of the weather station, an Exception is thrown.
-    *
-    * @param lat0 The Northern latitude bound.
-    * @param lng0 The Western longitude bound.
-    * @param lat1 The Southern latitude bound.
-    * @param lng1 The Eastern longitude bound.
-    * @return
-    */
   override def averageTemperature(lat0: Double, lon0: Double, lat1: Double, lon1: Double): Option[Double] = {
 
     // Make sure lat0 lon0 is above and to the left of lat1 lon1
